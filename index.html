@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="header">
+                <h1>Calculator Pro</h1>
+            </div>
+            
+            <!-- Display Screen -->
+            <div class="display">
+                <div class="history" id="history"></div>
+                <div class="screen" id="screen">0</div>
+            </div>
+
+            <!-- Keyword Input -->
+            <div class="keyword-section">
+                <input type="text" id="keywordInput" placeholder="Type keywords like 'add', 'sqrt', 'power'...">
+                <button onclick="processKeyword()">Go</button>
+            </div>
+
+            <!-- Buttons Grid -->
+            <div class="buttons">
+                <button class="btn-clear" onclick="clearAll()">AC</button>
+                <button class="btn-clear" onclick="clearEntry()">CE</button>
+                <button class="btn-operator" onclick="appendToScreen('÷')">÷</button>
+                <button class="btn-operator" onclick="appendToScreen('×')">×</button>
+
+                <button class="btn-number" onclick="appendToScreen('7')">7</button>
+                <button class="btn-number" onclick="appendToScreen('8')">8</button>
+                <button class="btn-number" onclick="appendToScreen('9')">9</button>
+                <button class="btn-operator" onclick="appendToScreen('-')">-</button>
+
+                <button class="btn-number" onclick="appendToScreen('4')">4</button>
+                <button class="btn-number" onclick="appendToScreen('5')">5</button>
+                <button class="btn-number" onclick="appendToScreen('6')">6</button>
+                <button class="btn-operator" onclick="appendToScreen('+')">+</button>
+
+                <button class="btn-number" onclick="appendToScreen('1')">1</button>
+                <button class="btn-number" onclick="appendToScreen('2')">2</button>
+                <button class="btn-number" onclick="appendToScreen('3')">3</button>
+                <button class="btn-function" onclick="appendToScreen('(')">(</button>
+                <button class="btn-function" onclick="appendToScreen(')')">)</button>
+
+                <button class="btn-number zero" onclick="appendToScreen('0')">0</button>
+                <button class="btn-number" onclick="appendToScreen('.')">.</button>
+                <button class="btn-equals" onclick="calculate()" rowspan="2">=</button>
+                <button class="btn-function" onclick="backspace()">⌫</button>
+            </div>
+
+            <!-- History -->
+            <div class="history-panel">
+                <div class="history-title">History</div>
+                <div class="history-list" id="historyList"></div>
+                <button class="clear-history" onclick="clearHistory()">Clear History</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
